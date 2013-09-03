@@ -1,0 +1,132 @@
+body {
+  background-color: black
+}
+
+.racer_board {
+  width: 1275px;
+  margin: 200px auto;
+  height: 154px;
+  border-right:14px solid white;
+}
+
+.row1 {
+  background-image: url('../images/road.png');
+  height: 75px;
+  width: 1275px;
+  background-size: 75px 75px;
+}
+
+.row2 {
+  background-image: url('../images/road.png');
+  height: 75px;
+  width: 1275px;
+  background-size: 75px 75px;
+}
+
+#cage1 img {
+  height: 75px;
+  width: 75px;
+  float: left;
+}
+
+
+
+#winner {
+  height: 40%;
+  width: 50%;
+  display: block;
+  margin: auto;
+}  
+
+@font-face {
+  font-family: cage_font;
+  src: url('../images/BREECBO_.TTF');
+}
+
+#cage2 img {
+  height: 75px;
+  width: 75px;
+  float: left;
+}
+
+.racer_board p {
+  font-family: cage_font;
+  color: white;
+  font-size: 100px;
+  text-align: center;
+}
+
+.welcome {
+  color:white;
+  font-family: helvetica;
+  font-size: 20px;
+}
+
+p {
+  font-family: cage_font;
+  color: white;
+  font-size: 100px;
+  text-align: center;
+}
+
+.racer_board span {
+  height: 75px;
+  width: 75px;
+  display:inline-block;
+  background-image: url('road.png');
+  background-size: 75px 75px;
+  margin: 0;
+  margin-right: -4px;
+  margin-bottom: -4px;
+}
+
+.racer_board span.start {
+  border-right: 7px solid white;
+}
+
+.racer_board span.finish {
+  border-left: 7px solid white;
+}
+
+.racer_board span img {
+  height: 75px;
+  width: 75px;
+  opacity: 0;
+}
+
+#time {
+  color: white;
+}
+
+#cage1 {
+  height: 75px;
+  width: 1289px;
+  border-bottom: 4px dashed #efca10;
+}
+
+#cage2 {
+  height: 75px;
+  width: 1289px;
+}
+
+.racer_board #cage1 span.active img {
+  opacity: 1;
+
+}
+
+.racer_board #cage2 span.active img {
+  opacity: 1;
+}
+
+form {
+  text-align: center;
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  font-size: 10px;
+  font-family: Helvetica;
+  color: white;
+  opacity: 0.4;
+}
