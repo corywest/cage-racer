@@ -13,6 +13,8 @@ function checkForWin(avatar) {
 
     $.post('/save_time',{duration: time});
     $('#winner').slideDown( 1000 ).delay( 5000 ).slideUp( 1000 );
+    $(document).unBind('#cage1', 'cage2');
+    // $(document).unBind('#cage2');
     
   }
   else if (start === null) {
@@ -32,7 +34,7 @@ $(document).ready(function() {
     $(document).keyup(function(key) {
       switch(parseInt(key.which,10)) {
       case 16:
-        $('#cage1 img').animate({marginLeft: "+=90px"}, 10, function() {
+        $('#cage1 img').animate({marginLeft: "+=20px"}, 10, function() {
           checkForWin($('#cage1 img'));
         });
     }
@@ -41,7 +43,7 @@ $(document).ready(function() {
     $(document).keyup(function(key) {
       switch(parseInt(key.which,10)) {
       case 13:
-        $('#cage2 img').animate({marginLeft: '+=90px'}, 10, function(){
+        $('#cage2 img').animate({marginLeft: '+=20px'}, 10, function(){
           checkForWin($('#cage2 img'));
         });
     }

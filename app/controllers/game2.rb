@@ -3,3 +3,7 @@ post "/save_time" do
   @game.duration = params[:duration]
   erb :game2
 end
+
+post "/" do 
+  erb :index
+end
