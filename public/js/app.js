@@ -1,21 +1,34 @@
 start = null;
+finished = false;
 
-// $("#form").submit();
+function returnWinner(selector) {
+  if (selector == '#cage1 img') {
+    return "player1";
+  }
+  else {
+    return "player2";
+  } 
+}
+
 
 function checkForWin(avatar) {
-
+  console.log(avatar.selector);
   if (avatar.outerWidth(true) >= 1295) {
     end = new Date();
-    console.log((end-start));
-    $('#time').html((end-start) / 1000);
     var time = ((end-start) / 1000).toString();
-    console.log(time);
 
-    $.post('/save_time',{duration: time});
+    var winner = returnWinner(avatar.selector);
+    console.log(winner)
     $('#winner').slideDown( 1000 ).delay( 5000 ).slideUp( 1000 );
-    $(document).unBind('#cage1', 'cage2');
-    // $(document).unBind('#cage2');
+
+    $.post('/save_time',{duration: time, winner: winner}, function(response) {
+      $('#in_game_results').html(response);
+
+    });
     
+   
+    $('#in_game_results').show();
+    finished = true;
   }
   else if (start === null) {
     start = new Date();
@@ -28,24 +41,30 @@ function checkForWin(avatar) {
 
 $(document).ready(function() {
 
+    new Game()
 
+    $('#in_game_results').hide();
     $('#winner').hide();
 
     $(document).keyup(function(key) {
       switch(parseInt(key.which,10)) {
       case 16:
-        $('#cage1 img').animate({marginLeft: "+=20px"}, 10, function() {
-          checkForWin($('#cage1 img'));
-        });
+        if (finished == false) {
+          $('#cage1 img').animate({marginLeft: "+=20px"}, 10, function() {
+            checkForWin($('#cage1 img'));
+          });
+        }
     }
     });
 
     $(document).keyup(function(key) {
       switch(parseInt(key.which,10)) {
       case 13:
-        $('#cage2 img').animate({marginLeft: '+=20px'}, 10, function(){
-          checkForWin($('#cage2 img'));
-        });
+        if (finished == false) {  
+          $('#cage2 img').animate({marginLeft: '+=20px'}, 10, function(){
+            checkForWin($('#cage2 img'));
+          });
+        }
     }
 
     });

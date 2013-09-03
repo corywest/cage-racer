@@ -1,0 +1,7 @@
+<div class="results">
+	<p>Player 1: <%= @player1.name %></p>
+	<p>Player 2: <%= @player2.name %></p>
+	<p>Winner: <%= @game.winner %></p>
+	<p>Race Time: <%= @game.duration %></p>
+	<p>Secret URL: <a href="http://localhost:9393/<%= @game.secret_url %>">http://localhost:9393/<%= @game.secret_url %></a></p>
+</div>
