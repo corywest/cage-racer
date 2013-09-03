@@ -94,9 +94,7 @@ p {
   opacity: 0;
 }
 
-#time {
-  color: white;
-}
+
 
 #cage1 {
   height: 75px;
@@ -121,6 +119,22 @@ p {
 form {
   text-align: center;
   color: white;
+}
+
+.results p {
+  color: white;
+  font-family: helvetica;
+  font-size: 20px;
+}
+
+#in_game_results {
+  margin-top: 80px;
+}
+
+#in_game_results p {
+  color: white;
+  font-family: helvetica;
+  font-size: 20px;
 }
 
 .footer {

@@ -1,4 +1,9 @@
-<img id='winner' src='../images/iEItZGRWbnPSn.gif'/>
+<% cage_array = ["http://i.minus.com/iEItZGRWbnPSn.gif", "http://i.minus.com/ivmevXZUra7vO.gif", "http://i.minus.com/i9Lmpefa2pHvX.gif", "http://i.minus.com/i2VXAYlu8nQZw.gif", "http://i.minus.com/ibiknCz2phdhow.gif", "http://i.minus.com/iHzR61Zq0d2md.gif", "http://i.minus.com/ibtgfoX15LABQK.gif", "http://i.minus.com/igvlrKoF7Rrge.gif", "http://i.minus.com/ix3djTLqmdDa3.gif", "http://i.minus.com/ippqgJ1u73Drb.gif", "http://i.minus.com/iTKav2R5UyYgs.gif", "http://i.minus.com/iXwF88Bc7c3FH.gif", "http://i.minus.com/idXROKk76N0jM.gif", "http://i.minus.com/ibzXQMcNJlMdI4.gif", "http://i.minus.com/ibhl8H3Z9K71IW.gif", "http://i.minus.com/ibvdT5oyswbdDy.gif", "http://i.minus.com/iseKAgDLLLLsQ.gif", "http://i.minus.com/iB2rTUw3fW4Eg.gif", "http://i.minus.com/i8N6QnfvBlmKM.gif"] %>
+<img id='winner' src=<%= cage_array.sample %>>
+
+<p class="welcome"><%= @player1.name %>: Press Shift to Race!</p>
+<p class="welcome"><%= @player2.name %>: Press Enter to Race!</p>
+
 
 <div class ="racer_board">
   <div id="cage1">
@@ -11,6 +16,15 @@
     <div class="row2"></div>
   </div>
 
-  <p>CAGE RACER</p>
+	<div id="in_game_results">
+  	<%= erb :_in_game_results %>
+	</div>
+
+  <p class="title">CAGE RACER</p>
+
+  <form id="return_home" action="/" method="POST">
+  <input id="submit" type="submit" name="return_home" value="Race again">
+  </form>
+
 </div>
 
