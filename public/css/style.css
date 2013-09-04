@@ -1,4 +1,13 @@
-body {
+.container {
+  background: url("../images/Nicolas-Cage-face-young-hd-wallpapers.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+}
+
+.board_page {
   background-color: black
 }
 
@@ -57,8 +66,8 @@ body {
 }
 
 .welcome {
-  color:white;
-  font-family: helvetica;
+  color:black;
+  font-family: cage_font;
   font-size: 20px;
 }
 
@@ -142,5 +151,5 @@ form {
   font-size: 10px;
   font-family: Helvetica;
   color: white;
-  opacity: 0.4;
+  opacity: 0.9;
 }
